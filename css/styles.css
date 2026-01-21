@@ -1,0 +1,295 @@
+/* =========================
+   LzKitKoding Author Template
+   styles.css
+   ========================= */
+
+/* ---------- Brand Tokens ---------- */
+:root {
+  --rose: #D4A5A5;
+  --slate: #4A5859;
+  --beige: #E8D5C4;
+  --burgundy: #6B2737;
+
+  --ink: #1e1e1e;
+  --muted: #6c757d;
+
+  --bg: #fbf7f3;       /* warm off-white */
+  --surface: #ffffff;  /* card background */
+
+  --radius: 14px;
+  --radius-sm: 10px;
+
+  --shadow-sm: 0 10px 24px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 16px 40px rgba(0, 0, 0, 0.10);
+
+  --focus: 0 0 0 0.25rem rgba(212, 165, 165, 0.35);
+}
+
+/* ---------- Global Base ---------- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Raleway", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.65;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  letter-spacing: 0.2px;
+}
+
+/* Better looking selections */
+::selection {
+  background: rgba(212, 165, 165, 0.55);
+}
+
+/* ---------- Links ---------- */
+a {
+  color: var(--burgundy);
+  text-decoration-color: rgba(107, 39, 55, 0.35);
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: #521b28;
+  text-decoration-color: rgba(107, 39, 55, 0.65);
+}
+
+/* ---------- Bootstrap Overrides (gentle, not violent) ---------- */
+
+/* Containers feel nicer at common widths */
+.container {
+  max-width: 1120px;
+}
+
+/* Navbar tweaks */
+.navbar {
+  border-bottom: 1px solid rgba(74, 88, 89, 0.12);
+  background: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: blur(8px);
+}
+
+.navbar-brand span {
+  font-family: "Playfair Display", Georgia, serif;
+  letter-spacing: 0.4px;
+}
+
+.navbar .nav-link {
+  font-weight: 600;
+  color: var(--slate);
+}
+
+.navbar .nav-link:hover {
+  color: var(--burgundy);
+}
+
+.navbar .nav-link.active {
+  color: var(--burgundy) !important;
+}
+
+.dropdown-menu {
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(74, 88, 89, 0.12);
+  box-shadow: var(--shadow-sm);
+  padding: 0.5rem;
+}
+
+.dropdown-item {
+  border-radius: 8px;
+  font-weight: 600;
+  color: var(--slate);
+}
+
+.dropdown-item:hover {
+  background: rgba(212, 165, 165, 0.18);
+  color: var(--burgundy);
+}
+
+/* Top utility bar */
+.bg-dark {
+  background: linear-gradient(90deg, #111, #1a1a1a) !important;
+}
+
+/* Headings: make Bootstrap display sizes feel luxe */
+.display-5, .display-6 {
+  color: #111;
+}
+
+/* Soft section edges */
+header.border-bottom,
+header.py-5.border-bottom {
+  border-bottom: 1px solid rgba(74, 88, 89, 0.12) !important;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  border-radius: 999px; /* pill */
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  padding: 0.65rem 1.1rem;
+}
+
+.btn-lg {
+  padding: 0.85rem 1.35rem;
+}
+
+.btn-dark {
+  background-color: var(--burgundy);
+  border-color: var(--burgundy);
+}
+
+.btn-dark:hover {
+  background-color: #521b28;
+  border-color: #521b28;
+}
+
+.btn-outline-dark {
+  color: var(--burgundy);
+  border-color: rgba(107, 39, 55, 0.5);
+}
+
+.btn-outline-dark:hover {
+  background-color: rgba(107, 39, 55, 0.10);
+  color: #521b28;
+  border-color: rgba(107, 39, 55, 0.65);
+}
+
+/* Focus states that match your palette */
+.btn:focus,
+.form-control:focus,
+.form-select:focus,
+.navbar-toggler:focus {
+  box-shadow: var(--focus) !important;
+  border-color: rgba(212, 165, 165, 0.65) !important;
+}
+
+/* ---------- Cards ---------- */
+.card {
+  border-radius: var(--radius);
+  border: 1px solid rgba(74, 88, 89, 0.12);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.card .card-body {
+  padding: 1.25rem;
+}
+
+/* ---------- Images ---------- */
+img.rounded,
+.img-fluid.rounded {
+  border-radius: var(--radius) !important;
+}
+
+/* Cover hover effect on book grids */
+a.text-decoration-none img.img-fluid {
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+a.text-decoration-none:hover img.img-fluid {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ---------- Sections ---------- */
+section.bg-light {
+  background: rgba(232, 213, 196, 0.35) !important;
+}
+
+/* Add breathing room between sections on small screens */
+@media (max-width: 576px) {
+  header.py-5,
+  section.py-5,
+  main.py-5 {
+    padding-top: 2.25rem !important;
+    padding-bottom: 2.25rem !important;
+  }
+}
+
+/* ---------- Forms ---------- */
+.form-label {
+  font-weight: 700;
+  color: var(--slate);
+}
+
+.form-control,
+.form-select,
+textarea.form-control {
+  border-radius: 12px;
+  border: 1px solid rgba(74, 88, 89, 0.18);
+  padding: 0.75rem 0.9rem;
+}
+
+.input-group .form-control {
+  border-top-left-radius: 999px;
+  border-bottom-left-radius: 999px;
+}
+
+.input-group .btn {
+  border-top-right-radius: 999px;
+  border-bottom-right-radius: 999px;
+}
+
+/* ---------- Breadcrumbs ---------- */
+.breadcrumb a {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.breadcrumb-item.active {
+  color: rgba(74, 88, 89, 0.85);
+}
+
+/* ---------- Alerts ---------- */
+.alert {
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(74, 88, 89, 0.12);
+}
+
+.alert-warning {
+  background: rgba(212, 165, 165, 0.22);
+  color: #3a1a22;
+}
+
+/* ---------- Footer ---------- */
+footer.bg-dark {
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+footer a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+footer a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ---------- Accessibility helpers ---------- */
+.visually-hidden-focusable:active,
+.visually-hidden-focusable:focus {
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 !important;
+  overflow: visible !important;
+  clip: auto !important;
+}
+
+/* ---------- Optional: nicer typography for lead text ---------- */
+.lead {
+  color: rgba(30, 30, 30, 0.82);
+}
+
+/* ---------- Optional: subtle divider style ---------- */
+hr {
+  border-top: 1px solid rgba(74, 88, 89, 0.14);
+  opacity: 1;
+}
